@@ -1,0 +1,128 @@
+[
+  {
+    "id": 1,
+    "categoryId": 1,
+    "type": "IMPACT STORY",
+    "date": "8TH JULY 2026",
+    "title": "Indonesia: Reimagining the State",
+    "image": "img/a.jfif",
+    "description": "I have returned to Indonesia many times over the years. Each visit reminds me of the country's extraordinary scale and promise: the world's largest Muslim-majority nation, the worl."
+  },
+  {
+    "id": 2,
+    "categoryId": 3,
+    "type": "PAPER",
+    "date": "7TH JULY 2026",
+    "title": "Russia After Ukraine: Constrained But Disruptive",
+    "image": "img/b.jfif",
+    "description": "There is no near end to Russia's war on Ukraine, and there may be no clean end at all. That makes the argument of this paper more urgent, not less. The temptation in Western capital."
+  },
+  {
+    "id": 3,
+    "categoryId": 3,
+    "type": "PAPER",
+    "date": "24TH JULY 2026",
+    "title": "Beyond the Harvest: Modernising Ukraine's Agricultural Processing Sector",
+    "image": "img/c.jfif",
+    "description": "Agriculture is at the heart of Ukrainian identity. Every Ukrainian has a connection to it through our land, family histories and the rural communities that have shaped our country."
+  },
+  {
+    "id": 4,
+    "categoryId": 3,
+    "type": "COMMENTARY",
+    "date": "24TH JULY 2026",
+    "title": "Five Lessons From Ukraine for Resilience Amid Instability",
+    "image": "img/d.jfif",
+    "description": "This week in Gdańsk, Poland, representatives from the public, private and third sectors across Europe will gather for the Ukraine Recovery Conference. As its name suggests, the con."
+  },
+  {
+    "id": 5,
+    "categoryId": 1,
+    "type": "COMMENTARY",
+    "date": "10TH JUNE 2026",
+    "title": "Technological Disruption Is Inevitable. British Prosperity Is Not.",
+    "image": "img/e.jfif",
+    "description": "This week, founders, investors and politicians from across Europe are gathering at London Tech Week, united by a simple message: they want to build a strong, innovative Europe, and."
+  },
+  {
+    "id": 6,
+    "categoryId": 4,
+    "type": "COMMENTARY",
+    "date": "1ST JUNE 2026",
+    "title": "Tony Blair: The Future Demands a Radical Response Based on Understanding the World We Live In",
+    "image": "img/f.jfif",
+    "description": "My essay has provoked what has been, on the whole, a good and healthy debate. But the terms of it need to be clear. It isn't about the 'why' of the progressive political mission in."
+  },
+  {
+    "id": 7,
+    "categoryId": 3,
+    "type": "PAPER",
+    "date": "27TH JULY 2026",
+    "title": "Palestinian Politics in Crisis: An Urgent Call for Action by the International Community",
+    "image": "img/g.jfif",
+    "description": "I have been engaged in the search for a just and lasting resolution of the Israeli-Palestinian conflict for the best part of 20 years."
+  },
+  {
+    "id": 8,
+    "categoryId": 1,
+    "type": "COMMENTARY",
+    "date": "15TH JULY 2026",
+    "title": "Why the AI Techlash Is a Test of Leadership",
+    "image": "img/h.jfif",
+    "description": "Advancements in artificial intelligence and other emerging technologies are reshaping economic growth, geopolitical influence and societal stability. Governments that fail to seize."
+  },
+  {
+    "id": 9,
+    "categoryId": 3,
+    "type": "IMPACT STORY",
+    "date": "11TH AUGUST 2026",
+    "title": "Clearing the Way for Growth: How Demining Became an Economic Imperative in Ukraine",
+    "image": "img/i.jfif",
+    "description": "Today, almost a quarter of Ukraine is potentially contaminated by landmines and other explosive remnants of war. This comes at an immense human cost: Ukraine has suffered more than."
+  },
+  {
+    "id": 10,
+    "categoryId": 3,
+    "type": "PAPER",
+    "date": "31ST JULY 2026",
+    "title": "Beyond Hormuz: Building Resilience for the Next Crisis",
+    "image": "img/j.jfif",
+    "description": "In early 2026 Iran did what two generations of energy-security planners had assumed would never happen: it closed the Strait of Hormuz. For 15 weeks, the channel that carries rough."
+  },
+  {
+    "id": 11,
+    "categoryId": 6,
+    "type": "IMPACT STORY",
+    "date": "23RD JULY 2026",
+    "title": "How Rwanda Is Using Data to Deliver Better Health Care",
+    "image": "img/k.jfif",
+    "description": "Collecting health data isn't enough - the data needs to be put to work in a way that improves health care for citizens and ultimately saves lives. In Rwanda, TBI has supported a mu."
+  },
+  {
+    "id": 12,
+    "categoryId": 1,
+    "type": "PAPER",
+    "date": "22ND JULY 2026",
+    "title": "\"Where Do I Start?\": How Governments Can Use AI and Data to Unlock Fiscal Space",
+    "image": "img/l.jfif",
+    "description": "\"Can AI really save me money?\" At TBI, we know through our work in more than 45 countries that this is a question finance ministers are beginning to ask. Behind it lies a deeper pr."
+  },
+  {
+    "id": 13,
+    "categoryId": 2,
+    "type": "IMPACT STORY",
+    "date": "14TH JANUARY 2026",
+    "title": "Building Vietnam’s Financial Future",
+    "image": "img/m.jfif",
+    "description": "Vietnam is one of Asia's most dynamic economies, with manufacturing-led growth creating jobs, lifting incomes and integrating the country into global supply chains."
+  },
+  {
+    "id": 14,
+    "categoryId": 5,
+    "type": "PAPER",
+    "date": "19TH MARCH 2026",
+    "title": "AI for Climate: Redesigning the UK’s Net-Zero Planning",
+    "image": "img/n.jfif",
+    "description": "The net-zero transition is no longer about delivering individual projects in isolation. It requires the coordination of complex energy grids and sustainable infrastructure."
+  }
+]

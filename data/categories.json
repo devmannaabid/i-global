@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "title": "Tech & Digitalisation",
+    "image": "img/tech-digitalisation.jfif",
+    "color": "#7794B4",
+    "buttonLink": "layout.html?page=view/categories-view&id=1"
+  },
+  {
+    "id": 2,
+    "title": "Economic Prosperity",
+    "image": "img/economic-prosperity.jfif",
+    "color": "#B57671",
+    "buttonLink": "layout.html?page=view/categories-view&id=2"
+  },
+  {
+    "id": 3,
+    "title": "Geopolitics & Security",
+    "image": "img/geopolitics-security.jfif",
+    "color": "#4A6B82",
+    "buttonLink": "layout.html?page=view/categories-view&id=3"
+  },
+  {
+    "id": 4,
+    "title": "Politics & Governance",
+    "image": "img/politics-governance.jfif",
+    "color": "#8E6B88",
+    "buttonLink": "layout.html?page=view/categories-view&id=4"
+  },
+  {
+    "id": 5,
+    "title": "Climate & Energy",
+    "image": "img/climate-energy.jfif",
+    "color": "#528A73",
+    "buttonLink": "layout.html?page=categories-view&id=5"
+  },
+  {
+    "id": 6,
+    "title": "Public Service",
+    "image": "img/public-service.jfif",
+    "color": "#C48B57",
+    "buttonLink": "layout.html?page=view/categories-view&id=6"
+  }
+]

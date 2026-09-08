@@ -1,0 +1,33 @@
+.bg-black {
+    background-color: #000 !important;
+}
+
+.bg-powderblue {
+    background-color: #B4DDD6 !important;
+}
+
+/* Section Background Colors */
+
+.bg-tech {
+    background-color: #7794B4;
+}
+
+.bg-economic {
+    background-color: #B57671;
+}
+
+.bg-geopolitics {
+    background-color: #CE8042;
+}
+
+.bg-politics {
+    background-color: #8F7193;
+}
+
+.bg-climate {
+    background-color: #879C59;
+}
+
+.bg-public {
+    background-color: #6197A3;
+}

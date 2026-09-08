@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" href="img/I-Global.png" type="image/x-icon">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/accordion.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/nav.css" rel="stylesheet">
+    <link href="css/overlapping.css" rel="stylesheet">
+    <link href="css/color.css" rel="stylesheet">
+    <link href="css/swiper.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- header 0 -->
+    <header>
+        <nav class="navbar navbar-dark bg-[#363535] py-1">
+            <div class="container d-flex justify-content-end align-items-center">
+
+                <!-- Social Links & Newsletter in One Straight Line -->
+                <ul class="navbar-nav flex-row align-items-center gap-2 mb-0">
+                    <li class="nav-item">
+                        <a class="nav-link p-1 text-white d-flex align-items-center" href="#" aria-label="X (Twitter)">
+                            <i class="bi bi-twitter-x" style="font-size: 1.1rem;"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link p-1 text-white d-flex align-items-center" href="#" aria-label="LinkedIn">
+                            <i class="bi bi-linkedin" style="font-size: 1.1rem;"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link p-1 text-white d-flex align-items-center" href="#" aria-label="Instagram">
+                            <i class="bi bi-instagram" style="font-size: 1.1rem;"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link p-1 text-white d-flex align-items-center" href="#" aria-label="Facebook">
+                            <i class="bi bi-facebook" style="font-size: 1.1rem;"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link p-1 text-white d-flex align-items-center" href="#" aria-label="YouTube">
+                            <i class="bi bi-youtube" style="font-size: 1.1rem;"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <!-- Trigger Modal Button -->
+                        <button type="button" class="btn text-light p-0 ms-2 border-0 shadow-none fw-normal"
+                            data-bs-toggle="modal" data-bs-target="#newsletterModal">
+                            NEWSLETTER
+                        </button>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+    </header>
+
+    <!-- header 1 -->
+    <header id="stickyHeader" class="border-bottom position-relative transparent-header">
+        <nav class="navbar navbar-expand-lg navbar-light py-3 position-static">
+            <div class="container position-static">
+
+                <!-- Brand Logo / Text -->
+                <a class="navbar-brand me-auto d-flex align-items-center" href="layout.html?page=index">
+                    <img src="img/institute.png" alt="Tony Blair Institute for Global Change" class="me-2 h-[3rem]">
+                </a>
+
+                <!-- Mobile Menu Toggle Button -->
+                <!-- Search Icon Button (Mobile Only: Left of Menu Button) -->
+                <button class="btn btn-link text-dark p-0 d-lg-none me-3" type="button" aria-label="Search"
+                    data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <i class="bi bi-search"></i>
+                </button>
+
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="text-uppercase">menu</span>
+                </button>
+
+                <!-- Navigation Content -->
+                <div class="collapse navbar-collapse" id="mainNavbar">
+                    <ul class="navbar-nav ms-auto gap-3 me-lg-4 align-items-lg-center py-3 py-lg-0">
+
+                        <!-- WHAT WE DO Mega Dropdown -->
+                        <li class="nav-item dropdown position-static active">
+                            <a class="nav-link fw-bold text-uppercase small text-dark py-1 px-0 dropdown-toggle"
+                                href="#" id="whatWeDoMenuLink" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                WHAT WE DO
+                            </a>
+
+                            <!-- Full-Width Mega Menu -->
+                            <div class="dropdown-menu w-100 start-0 border-0 rounded-0 shadow-lg mt-4 py-5 bg-white"
+                                aria-labelledby="whatWeDoMenuLink">
+                                <div class="container-fluid px-lg-5">
+                                    <div class="row align-items-start">
+
+                                        <!-- Left Sidebar Title -->
+                                        <div class="col-lg-3 mb-4 mb-lg-0">
+                                            <h6 class="fw-bold text-uppercase small tracking-wider">WHAT WE DO</h6>
+                                        </div>
+
+                                        <!-- Content Cards -->
+                                        <div class="col-lg-9">
+                                            <div class="row g-4">
+
+                                                <!-- Card 1: Approach -->
+                                                <div class="col-12 col-md-4">
+                                                    <a href="layout.html?page=approach"
+                                                        class="text-decoration-none text-dark d-block mega-card">
+                                                        <div class="ratio ratio-16x9 mb-3 d-none d-lg-block">
+                                                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=600&q=80"
+                                                                class="img-fluid rounded-0 object-fit-cover"
+                                                                alt="Approach">
+                                                        </div>
+                                                        <div class="d-flex align-items-center justify-content-between">
+                                                            <span class="fw-bold small text-uppercase">APPROACH</span>
+                                                            <box-icon type='solid' name='right-arrow-circle'></box-icon>
+                                                        </div>
+                                                    </a>
+                                                </div>
+
+                                                <!-- Card 2: Partnerships -->
+                                                <div class="col-12 col-md-4">
+                                                    <a href="layout.html?page=partnerships"
+                                                        class="text-decoration-none text-dark d-block mega-card">
+                                                        <div class="ratio ratio-16x9 mb-3 d-none d-lg-block">
+                                                            <img src="img/partnerships.jfif"
+                                                                class="img-fluid rounded-0 object-fit-cover"
+                                                                alt="Partnerships">
+                                                        </div>
+                                                        <div class="d-flex align-items-center justify-content-between">
+                                                            <span
+                                                                class="fw-bold small text-uppercase">PARTNERSHIPS</span>
+                                                            <box-icon type='solid' name='right-arrow-circle'></box-icon>
+                                                        </div>
+                                                    </a>
+                                                </div>
+
+                                                <!-- Card 3: Future of Britain -->
+                                                <div class="col-12 col-md-4">
+                                                    <a href="layout.html?page=futureofbritain"
+                                                        class="text-decoration-none text-dark d-block mega-card">
+                                                        <div class="ratio ratio-16x9 mb-3 d-none d-lg-block">
+                                                            <img src="img/futureofbritain.jfif"
+                                                                class="img-fluid rounded-0 object-fit-cover"
+                                                                alt="Future of Britain">
+                                                        </div>
+                                                        <div class="d-flex align-items-center justify-content-between">
+                                                            <span class="fw-bold small text-uppercase">Future of
+                                                                Britain</span>
+                                                            <box-icon type='solid' name='right-arrow-circle'></box-icon>
+                                                        </div>
+                                                    </a>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold text-uppercase small text-dark py-1 px-0"
+                                href="layout.html?page=insights">INSIGHTS</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold text-uppercase small text-dark py-1 px-0"
+                                href="layout.html?page=experts">EXPERTS</a>
+                        </li>
+
+                        <!-- WHO WE ARE Mega Dropdown -->
+                        <li class="nav-item dropdown position-static">
+                            <a class="nav-link fw-bold text-uppercase small text-dark dropdown-toggle" href="#"
+                                id="whoWeAreMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                WHO WE ARE
+                            </a>
+
+                            <div class="dropdown-menu w-100 start-0 border-0 rounded-0 shadow-lg mt-4 py-5 bg-white"
+                                aria-labelledby="whoWeAreMenuLink">
+                                <div class="container-fluid px-lg-5">
+                                    <div class="row align-items-start">
+
+                                        <div class="col-lg-3 mb-4 mb-lg-0">
+                                            <h6 class="fw-bold text-uppercase small tracking-wider">WHO WE ARE</h6>
+                                        </div>
+
+                                        <div class="col-lg-9">
+                                            <div class="row g-4">
+
+                                                <div class="col-12 col-md-4">
+                                                    <a href="layout.html?page=about"
+                                                        class="text-decoration-none text-dark d-block mega-card">
+                                                        <div class="ratio ratio-16x9 mb-3 d-none d-lg-block">
+                                                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80"
+                                                                class="img-fluid rounded-0 object-fit-cover"
+                                                                alt="About Us">
+                                                        </div>
+                                                        <div class="d-flex align-items-center justify-content-between">
+                                                            <span class="fw-bold small text-uppercase">ABOUT US</span>
+                                                            <box-icon type='solid' name='right-arrow-circle'></box-icon>
+                                                        </div>
+                                                    </a>
+                                                </div>
+
+                                                <div class="col-12 col-md-4">
+                                                    <a href="layout.html?page=leadership"
+                                                        class="text-decoration-none text-dark d-block mega-card">
+                                                        <div class="ratio ratio-16x9 mb-3 d-none d-lg-block">
+                                                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80"
+                                                                class="img-fluid rounded-0 object-fit-cover"
+                                                                alt="Executive Leadership">
+                                                        </div>
+                                                        <div class="d-flex align-items-center justify-content-between">
+                                                            <span class="fw-bold small text-uppercase">EXECUTIVE
+                                                                LEADERSHIP</span>
+                                                            <box-icon type='solid' name='right-arrow-circle'></box-icon>
+                                                        </div>
+                                                    </a>
+                                                </div>
+
+                                                <div class="col-12 col-md-4">
+                                                    <a href="layout.html?page=careers"
+                                                        class="text-decoration-none text-dark d-block mega-card">
+                                                        <div class="ratio ratio-16x9 mb-3 d-none d-lg-block">
+                                                            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80"
+                                                                class="img-fluid rounded-0 object-fit-cover"
+                                                                alt="Careers">
+                                                        </div>
+                                                        <div class="d-flex align-items-center justify-content-between">
+                                                            <span class="fw-bold small text-uppercase">CAREERS</span>
+                                                            <box-icon type='solid' name='right-arrow-circle'></box-icon>
+                                                        </div>
+                                                    </a>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                    <!-- Search Icon Button (Desktop Only: Placed inside menu on right) -->
+                    <button class="btn btn-link text-dark p-0 ms-lg-3 d-none d-lg-block" type="button"
+                        aria-label="Search" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <box-icon name='search'></box-icon>
+                    </button>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+    <!-- Dynamic Content Area -->
+  <main id="app-content">
+    <!-- JavaScript loads index.html / about.html etc. here -->
+  </main>
+
+    <footer class="text-white bg-black py-5">
+        <div class="container-fluid px-md-5">
+            <div class="row g-4 justify-content-between">
+
+                <!-- Left Column: Newsletter Section -->
+                <div class="col-lg-5 col-md-12 pe-lg-5">
+                    <h2 class="display-6 fw-bold mb-3" style="font-family: Georgia, serif;">Intelligence in your inbox.
+                    </h2>
+                    <p class="text-secondary small mb-4" style="max-width: 380px;">
+                        Get the latest big ideas in strategy, policy and delivery in your inbox every month with our
+                        newsletter.
+                    </p>
+                    <div class="mb-5">
+                        <a href="#"
+                            class="btn btn-outline-light rounded-pill px-4 py-2 text-uppercase fw-semibold btn-sm">
+                            Sign Me Up <i class="bi bi-arrow-right ms-2"></i>
+                        </a>
+                    </div>
+
+                    <!-- Social Media Icons -->
+                    <div class="d-flex gap-2">
+                        <a href="#"
+                            class="btn btn-light rounded-circle d-flex align-items-center justify-content-center text-dark fw-bold"
+                            style="width: 36px; height: 36px; font-size: 14px;">X</a>
+                        <a href="#"
+                            class="btn btn-light rounded-circle d-flex align-items-center justify-content-center text-dark"
+                            style="width: 36px; height: 36px;"><i class="bi bi-instagram"></i></a>
+                        <a href="#"
+                            class="btn btn-light rounded-circle d-flex align-items-center justify-content-center text-dark"
+                            style="width: 36px; height: 36px;"><i class="bi bi-linkedin"></i></a>
+                        <a href="#"
+                            class="btn btn-light rounded-circle d-flex align-items-center justify-content-center text-dark"
+                            style="width: 36px; height: 36px;"><i class="bi bi-youtube"></i></a>
+                        <a href="#"
+                            class="btn btn-light rounded-circle d-flex align-items-center justify-content-center text-dark"
+                            style="width: 36px; height: 36px;"><i class="bi bi-facebook"></i></a>
+                    </div>
+                </div>
+
+                <!-- Right Side: Links Columns -->
+                <div class="col-lg-6 col-md-12">
+                    <div class="row g-4">
+
+                        <!-- Column 1: What we do -->
+                        <div class="col-md-4 col-sm-6">
+                            <h3 class="h4 mb-4" style="font-family: Georgia, serif;">What we do</h3>
+                            <ul class="list-unstyled d-flex flex-column gap-3 small fw-bold">
+                                <li><a href="layout.html?page=approach" class="text-white text-decoration-none text-uppercase">Approach</a></li>
+                                <li><a href="layout.html?page=partnerships" class="text-white text-decoration-none text-uppercase">Partnerships</a>
+                                </li>
+                                <li><a href="layout.html?page=futureofbritain" class="text-white text-decoration-none text-uppercase">Future of
+                                        Britain</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Column 2: Insights -->
+                        <div class="col-md-4 col-sm-6">
+                            <h3 class="h4 mb-4" style="font-family: Georgia, serif;">Insights</h3>
+                            <ul class="list-unstyled d-flex flex-column gap-3 small fw-bold">
+                                <li><a href="layout.html?page=insights" class="text-white text-decoration-none text-uppercase">Insights</a></li>
+                                <li><a href="layout.html?page=experts" class="text-white text-decoration-none text-uppercase">Experts</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Column 3: Who we are -->
+                        <div class="col-md-4 col-sm-6">
+                            <h3 class="h4 mb-4" style="font-family: Georgia, serif;">Who we are</h3>
+                            <ul class="list-unstyled d-flex flex-column gap-3 small fw-bold">
+                                <li><a href="layout.html?page=about" class="text-white text-decoration-none text-uppercase">About Us</a></li>
+                                <li><a href="layout.html?page=leadership" class="text-white text-decoration-none text-uppercase">Leadership</a>
+                                </li>
+                                <li><a href="layout.html?page=careers" class="text-white text-decoration-none text-uppercase">Careers</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bottom Sub-Footer -->
+    <div class="bg-dark text-white py-4 border-top border-secondary border-opacity-25">
+        <div class="container-fluid px-md-5">
+            <div class="row g-4 align-items-start justify-content-between">
+
+                <!-- Legal Text Left Column -->
+                <div class="col-lg-5 col-md-12 text-secondary" style="font-size: 0.75rem; line-height: 1.4;">
+                    I-Global, trading as I-Global Change, is a company limited by
+                    guarantee
+                    registered in England and Wales (registered company number: 10505963) whose registered office is One
+                    Bartholomew Close, London, EC1A 7BL.
+                </div>
+
+                <!-- Links Right Side -->
+                <div class="col-lg-7 col-md-12">
+                    <div class="d-flex flex-wrap gap-x-4 gap-y-2 justify-content-lg-end text-uppercase fw-semibold"
+                        style="font-size: 0.75rem; letter-spacing: 0.5px;">
+                        <a href="#" class="text-white text-decoration-none me-3 mb-2">Cookies</a>
+                        <a href="#" class="text-white text-decoration-none me-3 mb-2">Terms of Use</a>
+                        <a href="#" class="text-white text-decoration-none me-3 mb-2">Privacy Policy</a>
+                        <a href="#" class="text-white text-decoration-none me-3 mb-2">Accessibility</a>
+                        <a href="#" class="text-white text-decoration-none me-3 mb-2">Financial Statements</a>
+                        <a href="#" class="text-white text-decoration-none mb-3 mb-2">Media Centre</a>
+                        <div class="w-100"></div> <!-- Line break for second row of links -->
+                        <a href="#" class="text-white text-decoration-none">Contact Us</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!--search Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content bg-dark text-white border-0 rounded-0">
+
+                <!-- Header -->
+                <div class="d-flex justify-content-between align-items-center p-4">
+                    <h6 class="text-uppercase fw-bold m-0 small text-white">
+                        Tony Blair Institute for Global Change
+                    </h6>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+
+                <!-- Search Section -->
+                <div class="flex-grow-1 d-flex align-items-center justify-content-center px-4 mb-4">
+                    <form class="w-100">
+                        <div class="input-group">
+
+                            <!-- Search Icon -->
+                            <span
+                                class="input-group-text bg-transparent border-secondary border-end-0 rounded-start-pill text-white-50 ps-4">
+                                <i class="bi bi-search fs-5"></i>
+                            </span>
+
+                            <!-- Search Input -->
+                            <input type="search"
+                                class="form-control bg-transparent text-white border-secondary border-start-0 border-end-0 py-3 shadow-none"
+                                placeholder="SEARCH" aria-label="Search" autocomplete="off">
+
+                            <!-- Arrow Button -->
+                            <button type="submit"
+                                class="btn bg-transparent border-secondary border-start-0 rounded-end-pill text-white-50 pe-4">
+                                <i class="bi bi-arrow-right fs-5"></i>
+                            </button>
+
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Newsletter Modal -->
+    <div class="modal fade" id="newsletterModal" tabindex="-1" aria-labelledby="newsletterModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content border-0 p-4 p-md-5 rounded-0 position-relative">
+
+                <!-- Close Button -->
+                <button type="button" class="btn-close position-absolute top-0 end-0 m-4 shadow-none"
+                    data-bs-dismiss="modal" aria-label="Close"></button>
+
+                <div class="row">
+                    <div class="col-md-7 col-lg-6">
+                        <h2 class="h3 fw-normal mb-4 fs-3" style="font-family: serif; color: #111;">
+                            Be the first to know what we're doing – and how you can get more involved.
+                        </h2>
+
+                        <form>
+                            <div class="mb-3">
+                                <label for="firstName" class="form-label small mb-1"><span class="text-danger">*</span>
+                                    First
+                                    Name</label>
+                                <input type="text" class="form-control rounded-0 border-dark shadow-none" id="firstName"
+                                    required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="lastName" class="form-label small mb-1"><span class="text-danger">*</span>
+                                    Last Name</label>
+                                <input type="text" class="form-control rounded-0 border-dark shadow-none" id="lastName"
+                                    required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="emailInput" class="form-label small mb-1"><span class="text-danger">*</span>
+                                    Email</label>
+                                <input type="email" class="form-control rounded-0 border-dark shadow-none"
+                                    id="emailInput" required>
+                            </div>
+
+                            <p class="text-muted extra-small mb-4" style="font-size: 0.75rem;">
+                                By signing up, you agree to receive emails about our work. For full information on the
+                                use of your data
+                                please see our <a href="#" class="text-dark">privacy policy</a>.
+                            </p>
+
+                            <button type="submit" class="btn btn-dark rounded-pill  px-4 py-2 text-uppercase  fw-bold"
+                                style="font-size: 0.8rem;">
+                                SIGN UP
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/boxicons.js"></script>
+    <script src="js/accordion.js"></script>
+    <script src="js/topic-switcher.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/video.js"></script>
+    <script src="js/utility-classes.js"></script>
+    <script src="js/float-menu.js"></script>
+    <script src="js/image-switching.js"></script>
+    <script src="js/swiper.js"></script>
+
+    <!-- data page -->
+     <script src="js/experts.js"></script>
+     <script src="js/categories.js"></script>
+     <script src="js/insights.js"></script>
+
+     <!-- 3. Alpine.js SECOND (must have defer attribute) -->
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+</body>
+</html>

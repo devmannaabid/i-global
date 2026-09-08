@@ -1,0 +1,342 @@
+<!-- Hero Section -->
+<div
+    class="card text-white bg-dark border-0 position-relative overflow-hidden min-vh-100 d-flex align-items-center justify-content-center">
+    <!-- Background Image -->
+    <img src="img/hero.png" class="position-absolute top-0 start-0 w-100 h-100" alt="Hero background image"
+        style="object-fit: cover; z-index: 1;">
+
+    <!-- Overlay Content -->
+    <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center text-center p-4 w-100"
+        style="z-index: 2; background: rgba(0,0,0,0.4);">
+        <p class="text-uppercase tracking-wide mb-2">Ideas with impact</p>
+        <h1 class="display-1 fw-bold mb-3">Insights</h1>
+
+        <p class="card-text my-3" style="max-width: 600px;">
+            Make better decisions across strategy, policy, and delivery with the latest insights, research, and reports
+            from our experts.
+        </p>
+    </div>
+</div>
+
+<div class="container" x-data="insightsComponent">
+    <div class="mt-5">
+        <p class="text-uppercase">Featured</p>
+    </div>
+
+    <!-- ডাটা লোড হলে শুধু লেটেস্ট/প্রথম কার্ডটি দেখাবে -->
+    <template x-if="latestInsight">
+        <div class="card text-white mt-3 overflow-hidden border-0 rounded-0 position-relative">
+            <!-- Background Image -->
+            <img :src="latestInsight.image || `https://picsum.photos/seed/${latestInsight.id}/1200/600`" 
+                 class="card-img rounded-0 ofbject-fit-cover" 
+                 alt="Background Image">
+
+            <!-- Dark Overlay Gradient -->
+            <div class="card-img-overlay overlay d-flex flex-column justify-content-end p-4 p-md-5">
+
+                <!-- Main Content Container -->
+                <div class="col-12 col-lg-8 ps-md-3">
+                    <!-- Category Tag -->
+                    <small class="text-uppercase fw-semibold tracking-wider text-white-50 d-block mb-2">
+                        <span x-text="getCategoryName(latestInsight.categoryId)"></span>
+                    </small>
+
+                    <!-- Headline -->
+                    <h1 class="display-4 fw-normal text-white mb-4" x-text="latestInsight.title"></h1>
+
+                    <!-- Date & Type -->
+                    <p class="small text-uppercase text-white-50 fw-semibold mb-2" x-text="`${latestInsight.type} | ${latestInsight.date}`"></p>
+
+                    <!-- Subtitle / Snippet -->
+                    <p class="card-text text-white-50 small mb-0" x-text="latestInsight.description"></p>
+                </div>
+
+            </div>
+        </div>
+    </template>
+</div>
+
+<section class="mt-5 mb-5" x-data="insightsComponent">
+    <div class="container-md">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <template x-for="item in insights.slice().reverse().slice(0, 6)" :key="item.id">
+                <div class="col">
+                    <div class="card border-0 h-100">
+                        <img :src="item.image || 'https://picsum.photos/seed/${item.id}/600/400'" class="card-img-top object-fit-cover md:h-[16rem]"
+                            :alt="item.title">
+                        <div class="card-body">
+                            <p class="text-uppercase mb-2">
+                                <box-icon type='solid' size="0.9rem" color="#6197a3" name='circle'></box-icon>
+                                <span x-text="getCategoryName(item.categoryId)"></span>
+                            </p>
+                            <h5 class="card-title" x-text="item.title"></h5>
+                            <p class="text-uppercase text-muted my-2">
+                                <small x-text="`${item.type} | ${item.date}`"></small>
+                            </p>
+                            <p class="card-text" x-text="item.description"></p>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </div>
+</section>
+
+<section id="topicSection" class="py-5 bg-tech">
+    <div class="px-lg-5">
+        <h2 id="sectionTitle" class="fw-bold mb-3 text-white">Tech & Digitalisation</h2>
+        <hr>
+        <!-- Nav -->
+        <ul class="nav nav-pills gap-3 mb-5 ">
+
+            <li class="nav-item">
+                <button class="nav-link active text-white" data-bs-toggle="tab" data-bs-target="#tech" data-bg="bg-tech"
+                    data-title="Tech & Digitalisation">
+                    Tech & Digitalisation
+                </button>
+            </li>
+
+            <li class="nav-item">
+                <button class="nav-link text-white" data-bs-toggle="tab" data-bs-target="#economic"
+                    data-bg="bg-economic" data-title="Economic Prosperity">
+                    Economic Prosperity
+                </button>
+            </li>
+
+            <li class="nav-item">
+                <button class="nav-link text-white" data-bs-toggle="tab" data-bs-target="#geo" data-bg="bg-geopolitics"
+                    data-title="Geopolitics & Security">
+                    Geopolitics & Security
+                </button>
+            </li>
+
+            <li class="nav-item">
+                <button class="nav-link text-white" data-bs-toggle="tab" data-bs-target="#politics"
+                    data-bg="bg-politics" data-title="Politics & Governance">
+                    Politics & Governance
+                </button>
+            </li>
+
+            <li class="nav-item">
+                <button class="nav-link text-white" data-bs-toggle="tab" data-bs-target="#climate" data-bg="bg-climate"
+                    data-title="Climate & Energy">
+                    Climate & Energy
+                </button>
+            </li>
+
+            <li class="nav-item">
+                <button class="nav-link text-white" data-bs-toggle="tab" data-bs-target="#public" data-bg="bg-public"
+                    data-title="Public Services">
+                    Public Services
+                </button>
+            </li>
+
+        </ul>
+
+        <!-- Cards -->
+        <div class="tab-content">
+
+            <!-- Card 1 -->
+            <div class="tab-pane fade show active" id="tech">
+                <div class="card border-0 text-white">
+
+                    <img src="https://picsum.photos/id/1015/1200/600" class="card-img">
+
+                    <div class="card-img-overlay overlay d-flex align-items-end">
+                        <div class="col-lg-6 p-5">
+                            <p class="text-uppercase">Tech & Digitalisation</p>
+                            <h1 class="display-3">How Leaders in the Global South Can Devise AI Regulation That
+                                Enables Innovation</h1>
+                            <p class="text-uppercase">6th February 2026</p>
+                            <p>Flexible, context‑specific regulation can help Global South countries harness
+                                artificial intelligence for growth while managing societal risks.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="tab-pane fade" id="economic">
+                <div class="card border-0 text-white">
+
+                    <img src="https://picsum.photos/id/1011/1200/600" class="card-img">
+
+                    <div class="card-img-overlay overlay d-flex align-items-end">
+                        <div class="col-lg-6 p-5">
+                            <p class="text-uppercase">Economic Prosperity</p>
+                            <h1 class="display-3">A Pro-Growth Roadmap for Business-Tax Reform</h1>
+                            <p class="text-uppercase">16th April 2026</p>
+                            <p>A simpler, investment‑focused business-tax system can strengthen confidence in
+                                government policies, raise productivity and drive sustainable economic growth.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="tab-pane fade" id="geo">
+                <div class="card border-0 text-white">
+
+                    <img src="https://picsum.photos/id/1043/1200/600" class="card-img">
+
+                    <div class="card-img-overlay overlay d-flex align-items-end">
+                        <div class="col-lg-6 p-5">
+                            <p class="text-uppercase">Geopolitics & Security</p>
+                            <h1 class="display-3">Geopolitics & Security</h1>
+                            <p class="text-uppercase">16th April 2026</p>
+                            <p>Global cooperation creates a safer future.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="tab-pane fade" id="politics">
+                <div class="card border-0 text-white">
+
+                    <img src="https://picsum.photos/id/1050/1200/600" class="card-img">
+
+                    <div class="card-img-overlay overlay d-flex align-items-end">
+                        <div class="col-lg-6 p-5">
+                            <p class="text-uppercase">Politics & Governance</p>
+                            <h1 class="display-3">Politics & Governance</h1>
+                            <p class="text-uppercase">16th April 2026</p>
+                            <p>Strong leadership builds resilient nations.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="tab-pane fade" id="climate">
+                <div class="card border-0 text-white">
+
+                    <img src="https://picsum.photos/id/1039/1200/600" class="card-img">
+
+                    <div class="card-img-overlay overlay d-flex align-items-end">
+                        <div class="col-lg-6 p-5">
+                            <p class="text-uppercase">Climate & Energy</p>
+                            <h1 class="display-3">Climate & Energy</h1>
+                            <p class="text-uppercase">16th April 2026</p>
+                            <p>Renewable energy powers the future.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="tab-pane fade" id="public">
+                <div class="card border-0 text-white">
+
+                    <img src="https://picsum.photos/id/1025/1200/600" class="card-img">
+
+                    <div class="card-img-overlay overlay d-flex align-items-end">
+                        <div class="col-lg-6 p-5">
+                            <p class="text-uppercase">Public Services</p>
+                            <h1 class="display-3">Preparing the NHS for the AI Era: Why Smarter Triage and
+                                Navigation Mean Better Health Care</h1>
+                            <p class="text-uppercase">6th February 2026</p>
+                            <p>A universal digital health record for every citizen in the UK is essential to enable
+                                better care and a modern, data-driven NHS.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mt-5" x-data="insightsComponent">
+    <div class="container-md">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <template x-for="item in visibleInsights" :key="item.id">
+                <div class="col">
+                    <div class="card border-0 h-100">
+                        <img :src="item.image || 'https://picsum.photos/seed/${item.id}/600/400'" class="card-img-top object-fit-cover md:h-[16rem]"
+                            :alt="item.title">
+                        <div class="card-body">
+                            <p class="text-uppercase mb-2">
+                                <box-icon type='solid' size="0.9rem" color="#6197a3" name='circle'></box-icon>
+                                <span x-text="getCategoryName(item.categoryId)"></span>
+                            </p>
+                            <h5 class="card-title" x-text="item.title"></h5>
+                            <p class="text-uppercase text-muted my-2">
+                                <small x-text="`${item.type} | ${item.date}`"></small>
+                            </p>
+                            <p class="card-text" x-text="item.description"></p>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </div>
+        <!-- See More Button Container -->
+        <div class="text-center mt-5 mb-5" x-show="limit < insights.length">
+            <button @click="loadMore()" class="btn btn-outline-dark px-4 py-2 fw-semibold rounded-pill">
+                See More Insights <i class="bx bx-right-arrow-alt"></i>
+            </button>
+        </div>
+    </div>
+</section>
+
+<section class=" py-5 overflow-hidden position-relative bg-light">
+    <!-- Heading -->
+    <div class="container text-center mt-5 pt-4 mb-5">
+        <span class="text-uppercase fw-semibold text-secondary" style="font-size:.75rem;letter-spacing:3px;">
+            NEWSLETTER
+        </span>
+    </div>
+
+    <!-- Row 1 -->
+    <div class="ticker-wrapper mb-4">
+        <div class="ticker-track gap-4" id="row1Track">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=300&auto=format&fit=crop"
+                class="ticker-img">
+            <span class="ticker-text">Practical Solutions</span>
+            <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=300&auto=format&fit=crop"
+                class="ticker-img">
+            <span class="ticker-text">Radical Ideas</span>
+            <!-- Duplicate -->
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=300&auto=format&fit=crop"
+                class="ticker-img">
+            <span class="ticker-text">Practical Solutions</span>
+            <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=300&auto=format&fit=crop"
+                class="ticker-img">
+            <span class="ticker-text">Radical Ideas</span>
+        </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="ticker-wrapper mb-5">
+        <div class="ticker-track gap-4" id="row2Track">
+            <span class="ticker-text">Radical Ideas</span>
+            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=300&auto=format&fit=crop"
+                class="ticker-img">
+            <span class="ticker-text">Practical Solutions</span>
+            <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?q=80&w=300&auto=format&fit=crop"
+                class="ticker-img">
+            <!-- Duplicate -->
+            <span class="ticker-text">Radical Ideas</span>
+            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=300&auto=format&fit=crop"
+                class="ticker-img">
+            <span class="ticker-text">Practical Solutions</span>
+            <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?q=80&w=300&auto=format&fit=crop"
+                class="ticker-img">
+        </div>
+    </div>
+    <!-- Button -->
+    <div class="container text-center">
+        <a href="#" class="btn border-0 bg-transparent text-dark fw-semibold d-inline-flex align-items-center gap-2">
+            <span style="letter-spacing:2px;font-size:.8rem;">
+                SIGN UP
+            </span>
+            <span class="bg-dark text-white rounded-circle d-flex justify-content-center align-items-center"
+                style="width:28px;height:28px;">
+                <i class="bi bi-arrow-right"></i>
+            </span>
+        </a>
+    </div>
+</section>

@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "Matteo Renzi",
+    "role": "TBI Strategic Counsellor & Former Prime Minister of Italy",
+    "image": "img/1.png",
+    "category": "Strategic Counsellors",
+    "link": "experts-view.html?id=1"
+  },
+  {
+    "id": 2,
+    "name": "Sanna Marin",
+    "role": "TBI Strategic Counsellor & Former Prime Minister of Finland",
+    "image": "img/2.png",
+    "category": "Strategic Counsellors",
+    "link": "experts-view.html?id=2"
+  },
+  {
+    "id": 3,
+    "name": "Dr. Aris Thorne",
+    "role": "Head of Frontier AI Policy",
+    "image": "img/5.png",
+    "category": "AI & Innovation",
+    "link": "experts-view.html?id=3"
+  },
+  {
+    "id": 4,
+    "name": "Elena Rostova",
+    "role": "Director of Tech Transformation & AI",
+    "image": "img/3.png",
+    "category": "AI & Innovation",
+    "link": "experts-view.html?id=4"
+  },
+  {
+    "id": 5,
+    "name": "Amina Bello",
+    "role": "Global Geopolitics & Security Lead",
+    "image": "img/8.png",
+    "category": "Global Affairs",
+    "link": "experts-view.html?id=5"
+  },
+  {
+    "id": 6,
+    "name": "Sir Robert Vance",
+    "role": "Lead Public Sector Delivery Advisor",
+    "image": "img/4.png",
+    "category": "Government Advisory",
+    "link": "experts-view.html?id=6"
+  },
+  {
+    "id": 7,
+    "name": "Kavita Patel",
+    "role": "Digital Governance & Reform Specialist",
+    "image": "img/6.png",
+    "category": "Government Advisory",
+    "link": "experts-view.html?id=7"
+  },
+  {
+    "id": 8,
+    "name": "Marcus Vance",
+    "role": "Senior Editor & Policy Analyst",
+    "image": "img/7.png",
+    "category": "Insight Authors",
+    "link": "experts-view.html?id=8"
+  },
+  {
+    "id": 9,
+    "name": "Dr. Sarah Jenkins",
+    "role": "Chief Economist & Thought Leadership Lead",
+    "image": "img/9.png",
+    "category": "Insight Authors",
+    "link": "experts-view.html?id=9"
+  }
+]

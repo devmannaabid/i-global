@@ -1,0 +1,45 @@
+<section class="py-5 bg-light" data-header-theme="light">
+    <div x-data="categoryPageContainer" class="container py-5 mt-5">
+        <template x-if="!isLoading">
+            <div>
+                <!-- Category Banner Header -->
+                <div class="p-5 mb-5 rounded-4 text-white shadow-sm"
+                    :style="{ backgroundColor: currentCategory?.color || '#333333' }">
+                    <p class="text-uppercase tracking-wider fw-semibold mb-2">Category</p>
+                    <h1 class="display-4 fw-bold" x-text="currentCategory?.title || 'Category View'"></h1>
+                </div>
+
+                <!-- Empty State Message -->
+                <template x-if="filteredInsights.length === 0">
+                    <div class="alert alert-info text-center py-4">
+                        No insights found for this category.
+                    </div>
+                </template>
+
+                <!-- Insights Grid -->
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <template x-for="item in filteredInsights" :key="item.id">
+                        <div class="col">
+                            <div class="card border-0 h-100 shadow-sm">
+                                <img :src="item.image || `https://picsum.photos/seed/${item.id}/600/400`"
+                                    class="card-img-top object-fit-cover" style="height: 16rem;" :alt="item.title">
+                                <div class="card-body">
+                                    <p class="text-uppercase mb-2">
+                                        <box-icon type='solid' size="0.9rem"
+                                            :color="currentCategory?.color || '#6197a3'" name='circle'></box-icon>
+                                        <span x-text="currentCategory?.title"></span>
+                                    </p>
+                                    <h5 class="card-title fw-bold" x-text="item.title"></h5>
+                                    <p class="text-uppercase text-muted my-2">
+                                        <small x-text="`${item.type} | ${item.date}`"></small>
+                                    </p>
+                                    <p class="card-text text-secondary" x-text="item.description"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </template>
+
+    </div>

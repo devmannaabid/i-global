@@ -1,0 +1,69 @@
+<section class="container text-center mb-5 pb-4">
+    <h1 id="expert-name" class="display-3 mb-4" style="font-family: 'Times New Roman', serif;">Loading...</h1>
+
+    <div class="mx-auto mb-4" style="max-width: 380px;">
+        <img id="expert-image" 
+             src="" 
+             alt="Profile Image" 
+             class="img-fluid w-100 object-fit-cover" 
+             style="aspect-ratio: 3/4;">
+    </div>
+
+    <p id="expert-role" class="text-uppercase fw-semibold tracking-wider small text-secondary mb-4"></p>
+
+    <a href="#" class="btn btn-dark rounded-pill px-4 py-2 text-uppercase fw-semibold tracking-wider small">
+        Biography <i class="bi bi-arrow-right ms-2"></i>
+    </a>
+</section>
+
+<div class="container mb-4">
+    <hr class="border-secondary opacity-25 m-0">
+</div>
+
+<section class="container py-3">
+    <p id="insights-label" class="text-uppercase fw-semibold tracking-wider small text-secondary mb-4">
+        INSIGHTS (0)
+    </p>
+
+    <div class="row" id="insights-container">
+        </div>
+
+    <div class="text-center mt-5 pt-5">
+        <span class="text-uppercase fw-semibold tracking-wider small text-secondary">
+            END OF LIST
+        </span>
+    </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', async () => {
+    // Extract query parameter: experts-view.html?id=X
+    const urlParams = new URLSearchParams(window.location.search);
+    const expertId = parseInt(urlParams.get('id'), 10);
+
+    if (!expertId) return;
+
+    try {
+        const response = await fetch('data/experts.json');
+        if (!response.ok) throw new Error('Network response was not ok');
+        
+        const experts = await response.json();
+        const expert = experts.find(item => item.id === expertId);
+
+        if (expert) {
+            // Populate Hero Profile
+            document.getElementById('expert-name').textContent = expert.name;
+            document.getElementById('expert-role').textContent = expert.role;
+            
+            const imgEl = document.getElementById('expert-image');
+            imgEl.src = (expert.image && expert.image.trim() !== '') ? expert.image : 'https://via.placeholder.com/600x800';
+            imgEl.alt = `${expert.name} Profile`;
+
+            // Update Insights Label
+            document.getElementById('insights-label').textContent = `INSIGHTS BY ${expert.name.toUpperCase()} (1)`;
+        }
+    } catch (error) {
+        console.error('Failed to load expert details:', error);
+    }
+});
+</script>

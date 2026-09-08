@@ -1,0 +1,140 @@
+<!-- style -->
+ <style>
+        .video-wrapper {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .play-btn {
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: transform 0.2s ease, opacity 0.3s ease;
+        }
+
+        .play-btn:hover {
+            transform: translate(-50%, -50%) scale(1.08) !important;
+        }
+
+        .duration-badge {
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+        }
+    </style>
+
+
+<!-- CAREERS -->
+<section class="vision-section py-5 text-bg-dark" data-header-theme="dark">
+    <div class="container ">
+        <br>
+        <div class="mt-5 mb-5">
+            <small class="text-uppercase text-secondary fw-semibold">Careers</small>
+            <h2 class="display-1 fw-bold mt-3">Make an impact</h2>
+            <h5>Join a team of 900+ changemakers, working across 40+ countries, united by one goal: helping leaders
+                build more open, inclusive and prosperous countries for their people.</h5>
+            <button class="btn btn-outline-light rounded-pill mt-3 py-2 text-uppercase fw-semibold ">Find Your Role <i
+                    class="bi bi-arrow-right ms-2"></i></button>
+        </div>
+        <!-- শুধুমাত্র এই ডাইভটিতেই ওভারল্যাপ ক্লাস থাকবে -->
+        <div class="overlapping-image-wrapper ">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80"
+                class="img-fluid w-100  shadow-lg  object-fit-cover" alt="Hero Banner Image">
+        </div>
+    </div>
+</section>
+
+<!-- Our Culture -->
+<section class="vision-section py-5 text-bg-white">
+    <div class="container ">
+        <div class="mt-2">
+            <small class="text-uppercase text-secondary fw-semibold">Our Culture</small>
+            <h2 class="display-2 fw-bold mt-3">Diversity is strength. We value and nurtur difference</h2>
+        </div>
+        <div class="row mt-4">
+            <div class="col-lg-5"></div>
+            <div class="col-lg-5 offset-lg-2 d-flex flex-column justify-content-center">
+                <p class="lead fw-bold">
+                    We are a not-for-profit, non-partisan organisation helping governments and leaders turn bold ideas
+                    into
+                    reality. We do it by advising on strategy, policy and delivery, unlocking the power of technology
+                    across all
+                    three. We do it by sharing our insights, so everyone can benefit. And we do it to help build more
+                    open,
+                    inclusive and prosperous countries for people everywhere.
+                </p>
+                <a href="layout.html?page=about" class="btn btn-outline-dark rounded-pill mt-2 py-2 w-50 text-uppercase fw-semibold ">
+                    About Us <i class="bi bi-arrow-right ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Video Section -->
+<section class="py-5">
+    <div class="container">
+
+        <div class="video-wrapper overflow-hidden rounded shadow" id="videoContainer">
+            <video id="myVideo" class="w-100 d-block ifject-fit-cover">
+                <source src="video/4K Beautiful Anime Scenery.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+            <!-- Centered Custom Play Button -->
+            <button id="playBtn"
+                class="play-btn position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center text-uppercase shadow-sm w-[80px] h-[80px] rounded-circle">
+                PLAY
+            </button>
+
+            <!-- Time Duration Badge (Bottom Right) -->
+            <div id="videoDuration" class="duration-badge position-absolute bottom-0 end-0 m-3 text-white">
+                01:28
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Explore -->
+<section class="py-5 bg-dark text-white">
+    <div class="container py-4">
+        <div class="row g-4">
+
+            <!-- Left Column: Badge / Label -->
+            <div class="col-md-3">
+                <span class="badge text-secondary-emphasis text-uppercase fw-normal rounded-1 px-2 py-1">
+                    EXPLORE
+                </span>
+            </div>
+
+            <!-- Right Column: Links List -->
+            <div class="col-md-9">
+                <div class="d-flex flex-column">
+
+                    <!-- Item 1 -->
+                    <a href="#"
+                        class="d-flex justify-content-between align-items-center text-white text-decoration-none py-4 border-top border-secondary">
+                        <span class="display-5 font-serif">Insights</span>
+                        <i class="bi bi-arrow-right fs-4"></i>
+                    </a>
+
+                    <!-- Item 2 -->
+                    <a href="#"
+                        class="d-flex justify-content-between align-items-center text-white text-decoration-none py-4 border-top border-secondary">
+                        <span class="display-5 font-serif">Approach</span>
+                        <i class="bi bi-arrow-right fs-4"></i>
+                    </a>
+
+                    <!-- Item 3 -->
+                    <a href="#"
+                        class="d-flex justify-content-between align-items-center text-white text-decoration-none py-4 border-top border-bottom border-secondary">
+                        <span class="display-5 font-serif">Partnerships</span>
+                        <i class="bi bi-arrow-right fs-4"></i>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
