@@ -32,7 +32,7 @@
     "title": "Climate & Energy",
     "image": "img/climate-energy.jfif",
     "color": "#528A73",
-    "buttonLink": "layout.html?page=categories-view&id=5"
+    "buttonLink": "layout.html?page=view/categories-view&id=5"
   },
   {
     "id": 6,

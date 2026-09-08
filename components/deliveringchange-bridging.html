@@ -1,0 +1,231 @@
+
+ <style>
+        .video-wrapper {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .play-btn {
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: transform 0.2s ease, opacity 0.3s ease;
+        }
+
+        .play-btn:hover {
+            transform: translate(-50%, -50%) scale(1.08) !important;
+        }
+
+        .duration-badge {
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+        }
+    </style>
+ <!-- Delivering change -->
+    <section class="mb-5 py-5 bg-white" data-header-theam="white" data-header-theme="light">
+        <div class="container">
+            <br>
+            <div class="mt-5">
+                <p class="fw-bold mb-5 text-uppercase tracking-wider">Delivering change</p>
+                <div class="row align-items-start">
+                    <div class="col-md-6 pe-md-5">
+                        <h1 class="mb-4 display-1 font-serif fw-normal" style="font-family: 'Times New Roman', serif;">
+                            Bridging the Digital Divide in Rwanda and Beyond
+                        </h1>
+                        <p class="text-secondary fs-6 lh-base">
+                            Rwanda has powerful ambitions to harness technology to improve lives but there is a problem:
+                            people in remote regions have no way to get online.
+                        </p>
+                    </div>
+                    <div class="col-md-6 mt-4 mt-md-0">
+                        <img src="img/bridging.jfif" alt="Smiling professional at global networking event"
+                            class="img-fluid w-100 object-fit-cover h-100">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+
+            <div class="video-wrapper overflow-hidden rounded shadow" id="videoContainer">
+                <video id="myVideo" class="w-100 d-block ifject-fit-cover">
+                    <source src="video/Bridging the Digital Divide in Rwanda and Beyond.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+                <!-- Centered Custom Play Button -->
+                <button id="playBtn"
+                    class="play-btn position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center text-uppercase shadow-sm w-[80px] h-[80px] rounded-circle">
+                    PLAY
+                </button>
+
+                <!-- Time Duration Badge (Bottom Right) -->
+                <div id="videoDuration" class="duration-badge position-absolute bottom-0 end-0 m-3 text-white">
+                    01:28
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 1: THE RWANDA CASE STUDY -->
+    <section class="container">
+        <h1  class="mb-3">The Connectivity Challenge</h1>
+        <p>
+            For the past 15 years, Rwanda has pursued an ambitious digital-transformation agenda – yet remote areas
+            remained offline, limiting access to education, health care and economic growth. Expanding broadband
+            connectivity was a major challenge; fibre was expensive, difficult to roll out and impractical for Rwanda’s
+            geography. Without a scalable solution, the digital divide threatened to stall national progress.
+        </p>
+        <p>
+            To address this, the Reimagined State Accelerator for Connectivity brought together the Rwandan government
+            and satellite-internet provider Starlink to create a sustainable connectivity model. By applying targeted
+            technological solutions to national priorities, TBI has helped expand digital access to education and health
+            care. This approach now informs efforts in other countries seeking similar results.
+        </p>
+
+        <h1>Lessons in Scale: From Pilot Initiative to National Strategy</h1>
+        <p>
+            This work in Rwanda shows how a coordinated effort can turn a pilot initiative into a national strategy.
+            What began as a project to connect 50 schools – providing 20,000+ students with access to digital learning
+            resources – has expanded to 40 health centres, enabling telemedicine, clinician training and improved
+            patient care. The government of Rwanda continues to provide internet services in all 90 sites and is using
+            this model to plan for further expansion.
+        </p>
+        <p>
+            Minister of ICT and Innovation Paula Ingabire highlighted the significance of this progress:
+        </p>
+        <blockquote>
+            “The partnership with TBI has been instrumental in bridging the digital divide in our country. The
+            connectivity provided has transformed the educational landscape in remote regions, enabling thousands of
+            students to access digital learning resources.”
+        </blockquote>
+        <p>
+            Rwanda’s experience provides a blueprint for other countries, demonstrating how connectivity can be
+            integrated into public infrastructure and scaled effectively.
+        </p>
+    </section>
+
+    <!--slider sction -->
+<section class="py-5" x-data="navSliderComponent">
+  <div class="container mb-1 d-flex justify-content-between align-items-center">
+    <h1 class="display-3">Explore</h1>
+    <a href="#" class="btn">View All <i class="bx bx-right-arrow-alt"></i></a>
+  </div>
+  <div id="heroSlider" class="carousel slide py-4 position-relative" data-bs-ride="false">
+    <div class="carousel-inner container" id="heroSliderInner">
+
+      <!-- Slide Loop -->
+      <template x-for="(slide, index) in slides" :key="slide.id || index">
+        <div class="carousel-item" :class="{ 'active': index === 0 }">
+          <div class="position-relative overflow-hidden">
+            <img :src="slide.image || `https://picsum.photos/seed/${slide.id}/1200/650`"
+              class="d-block w-100 object-fit-cover md:h-[700px]" :alt="slide.name || 'Slide Image'">
+
+            <!-- Smooth Gradient Overlay (pointer-events-none যোগ করা হয়েছে) -->
+            <div class="position-absolute top-0 start-0 w-100 h-100 pointer-events-none"
+              style="background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.8) 100%);">
+            </div>
+
+            <!-- Content Container (z-index বাড়ানো এবং pointer-events ঠিক করা হয়েছে) -->
+            <div
+              class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-end align-items-start text-start p-4 p-md-5"
+              style="z-index: 10; pointer-events: none;">
+
+              <!-- Link Wrap (pointer-events-auto নিশ্চিত করা হয়েছে) -->
+              <a :href="slide.link || '#'" class="text-decoration-none d-inline-block" style="pointer-events: auto;">
+                <h1 class="display-2 fw-bold text-white mb-0" x-text="slide.name"
+                  style="text-shadow: 0 3px 10px rgba(0,0,0,0.5);"></h1>
+              </a>
+            </div>
+          </div>
+        </div>
+      </template>
+
+    </div>
+
+    <!-- Global Floating Controls -->
+    <div
+      class="container position-absolute bottom-0 start-50 translate-middle-x pb-5 px-4 d-flex justify-content-end z-3 pointer-events-none">
+      <div class="d-flex gap-2 pointer-events-auto">
+        <button
+          class="btn btn-dark bg-opacity-50 border-0 rounded-circle p-3 d-flex align-items-center justify-content-center shadow"
+          type="button" data-bs-target="#heroSlider" data-bs-slide="prev" aria-label="Previous Slide">
+          <i class='bx bx-left-arrow-alt fs-5'></i>
+        </button>
+        <button
+          class="btn btn-dark bg-opacity-50 border-0 rounded-circle p-3 d-flex align-items-center justify-content-center shadow"
+          type="button" data-bs-target="#heroSlider" data-bs-slide="next" aria-label="Next Slide">
+          <i class='bx bx-right-arrow-alt fs-5'></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- SECTION 2: GLOBAL EXPANSION AND IMPACT -->
+    <section id="global-impact" class="container">
+        <h2>A Global Blueprint for Lasting Impact</h2>
+        <p>
+            Inspired by the success in Rwanda, TBI has supported multiple governments in embedding satellite and
+            alternative connectivity solutions to improve education, health care and public-service delivery. These
+            initiatives demonstrate what is possible when technology is applied to national challenges.
+        </p>
+
+        <h3>Malawi: Crisis Response and National Scaling</h3>
+        <p>Through Starlink’s technology solutions, the Reimagined State Accelerator:</p>
+        <ul>
+            <li>Restored connectivity for 600,000 displaced people in the aftermath of Cyclone Freddy, supporting crisis
+                response and rebuilding efforts.</li>
+            <li>Brought 22 schools and health-care sites online in less than two months, enhancing emergency medical
+                response and education access.</li>
+        </ul>
+
+        <h3>Zambia: Bringing E-Government Closer to Citizens</h3>
+        <ul>
+            <li>Launched a network of digital service centres, enabling citizens across Zambia to access government
+                services more efficiently and reducing reliance on paper-based systems.</li>
+            <li>Modernised the national postal system through improved digital infrastructure, enhancing public-service
+                delivery and establishing a foundation for broader e-government transformation.</li>
+        </ul>
+
+        <h3>Indonesia: Pioneering Digital Infrastructure in a New Capital</h3>
+        <ul>
+            <li>Connected seven public amenities in Nusantara, Indonesia’s new capital city, through a
+                satellite-internet pilot with Starlink.</li>
+            <li>Enabled nationwide licensing, laying the groundwork to reach 1.2 million people by 2029.</li>
+            <li>Positioned Nusantara as a future hub of research, sustainability and digital innovation.</li>
+        </ul>
+    </section>
+
+    <!-- Create with us -->
+    <section class="py-5 text-dark bg-white">
+        <div class="container py-4">
+            <div class="row g-4">
+
+                <!-- Left Column: Badge / Label -->
+                <div class="col-md-3">
+                    <h6 class=" text-dark-emphasis text-uppercase ">
+                        Create with us
+                    </h6>
+                </div>
+
+                <!-- Right Column: Links List -->
+                <div class="col-md-9">
+                    <div class="d-flex flex-column">
+
+                        <!-- Item 1 -->
+                        <a href="Delivering-change.html"
+                            class="d-flex justify-content-between align-items-center text-black text-decoration-none py-4 border-bottom border-secondary">
+                            <span class="display-5 font-serif">Turn bold ideas into reality</span>
+                            <i class="bi bi-arrow-right fs-4"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>

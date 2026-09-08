@@ -64,8 +64,7 @@
             <!-- Card 1 -->
             <div class="accordion-card active" id="card-1" onclick="activateCard(1)" onmouseenter="handleHover(1)">
                 <div class="card-img-box">
-                    <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=1200&q=80"
-                        alt="Insights">
+                    <img src="img/insights.jfif" alt="Insights">
                     <div class="card-overlay"></div>
                     <button
                         class="position-absolute top-0 end-0 mt-3 me-3 btn btn-light rounded-circle d-flex align-items-center justify-content-center border-0 fs-4 arrow-btn"
@@ -84,8 +83,7 @@
             <!-- Card 2 -->
             <div class="accordion-card" id="card-2" onclick="activateCard(2)" onmouseenter="handleHover(2)">
                 <div class="card-img-box">
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1200&q=80"
-                        alt="Partnerships">
+                    <img src="img/partnerships.jfif" alt="Partnerships">
                     <div class="card-overlay"></div>
                     <button
                         class="position-absolute top-0 end-0 mt-3 me-3 btn btn-light rounded-circle d-flex align-items-center justify-content-center border-0 fs-4 arrow-btn"
@@ -104,8 +102,7 @@
             <!-- Card 3 -->
             <div class="accordion-card" id="card-3" onclick="activateCard(3)" onmouseenter="handleHover(3)">
                 <div class="card-img-box">
-                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80"
-                        alt="Approach">
+                    <img src="img/approach.jfif" alt="Approach">
                     <div class="card-overlay"></div>
                     <button
                         class="position-absolute top-0 end-0 mt-3 me-3 btn btn-light rounded-circle d-flex align-items-center justify-content-center border-0 fs-4 arrow-btn"
@@ -129,35 +126,28 @@
     <div class="mt-5">
         <p class="text-uppercase">Featured</p>
     </div>
-
     <!-- ডাটা লোড হলে শুধু লেটেস্ট/প্রথম কার্ডটি দেখাবে -->
     <template x-if="latestInsight">
         <div class="card text-white mt-3 overflow-hidden border-0 rounded-0 position-relative">
             <!-- Background Image -->
-            <img :src="latestInsight.image || `https://picsum.photos/seed/${latestInsight.id}/1200/600`" 
-                 class="card-img rounded-0 ofbject-fit-cover" 
-                 alt="Background Image">
-
+            <img :src="latestInsight.image || `https://picsum.photos/seed/${latestInsight.id}/1200/600`"
+                class="card-img rounded-0 ofbject-fit-cover" alt="Background Image">
             <!-- Dark Overlay Gradient -->
             <div class="card-img-overlay overlay d-flex flex-column justify-content-end p-4 p-md-5">
-
                 <!-- Main Content Container -->
                 <div class="col-12 col-lg-8 ps-md-3">
                     <!-- Category Tag -->
-                    <small class="text-uppercase fw-semibold tracking-wider text-white-50 d-block mb-2">
+                    <small class="text-uppercase fw-semibold tracking-wider text-white d-block mb-2">
                         <span x-text="getCategoryName(latestInsight.categoryId)"></span>
                     </small>
-
                     <!-- Headline -->
                     <h1 class="display-4 fw-normal text-white mb-4" x-text="latestInsight.title"></h1>
-
                     <!-- Date & Type -->
-                    <p class="small text-uppercase text-white-50 fw-semibold mb-2" x-text="`${latestInsight.type} | ${latestInsight.date}`"></p>
-
+                    <p class="small text-uppercase text-white-50 fw-semibold mb-2 d-none d-md-block"
+                        x-text="`${latestInsight.type} | ${latestInsight.date}`"></p>
                     <!-- Subtitle / Snippet -->
-                    <p class="card-text text-white-50 small mb-0" x-text="latestInsight.description"></p>
+                    <p class="card-text text-white-50 small mb-0 d-none d-md-block" x-text="latestInsight.description"></p>
                 </div>
-
             </div>
         </div>
     </template>
@@ -171,7 +161,8 @@
                 <h6 class="text-uppercase mt-3 mt-md-5 mb-4 mb-md-5">
                     About Us
                 </h6>
-                <h1 class="display-3 display-md-1 fw-bold animate__animated animate__flash animate__slower animate__infinite mb-4 mb-md-5">
+                <h1
+                    class="display-3 display-md-1 fw-bold animate__animated animate__flash animate__slower animate__infinite mb-4 mb-md-5">
                     We are policy experts.
                 </h1>
                 <a href="layout.html?page=about" class="btn btn-dark rounded-pill px-4 py-2">
@@ -187,14 +178,15 @@
         <h1 class="display-3">Explore</h1>
         <a href="#" class="btn">View All <i class="bx bx-right-arrow-alt"></i></a>
     </div>
-    <div id="heroSlider" class="carousel slide py-4  position-relative" data-bs-ride="false">
+    <div id="heroSlider" class="carousel slide carousel-fade py-4  position-relative" data-bs-ride="false">
         <div class="carousel-inner container" id="heroSliderInner">
 
             <!-- Slide 1 -->
             <template x-for="(slide, index) in slides" :key="slide.id || index">
                 <div class="carousel-item" :class="{ 'active': index === 0 }">
                     <div class="position-relative overflow-hidden">
-                        <img :src="slide.image || `https://picsum.photos/seed/${slide.id}/1200/650`" class="d-block w-100 object-fit-cover md:h-[700px]" :alt="slide.title || 'Slide Image'">
+                        <img :src="slide.image || `https://picsum.photos/seed/${slide.id}/1200/650`"
+                            class="d-block w-100 object-fit-cover  md:h-[700px]" :alt="slide.title || 'Slide Image'">
 
                         <!-- Smooth Gradient Overlay (keeps image clear, adds dark shadow behind text) -->
                         <div class="position-absolute top-0 start-0 w-100 h-100"
@@ -202,11 +194,16 @@
                         </div>
 
                         <div
-                            class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-center p-4 z-1">
-                            <p class="text-uppercase text-white-50 mb-4 fw-semibold tracking-wider">Explore</p>
+                            class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-center p-4 z-2">
+                            <p class="text-uppercase text-white-50 mb-4 fw-semibold tracking-wider d-none d-md-block">Explore</p>
                             <h1 class="display-2 fw-bold text-white mb-5" x-text="slide.title"
                                 style="text-shadow: 0 3px 10px rgba(0,0,0,0.5);"></h1>
-                            <a :href="slide.buttonLink || '#'" :style="{ backgroundColor: slide.color || '#6197a3' }" class="btn btn-light text-white text-uppercase rounded-pill px-4 py-2 shadow-sm">See theme <i class="bx bx-right-arrow-alt"></i></a>
+                            <a :href="slide.buttonLink || '#'" 
+   @click.prevent="window.location.href = slide.buttonLink || '#'"
+   :style="{ backgroundColor: slide.color || '#6197a3' }"
+   class="btn btn-light text-white text-uppercase rounded-pill px-4 py-2 shadow-sm position-relative z-3">
+   See theme <i class="bx bx-right-arrow-alt"></i>
+</a>
                         </div>
                     </div>
                 </div>
@@ -215,21 +212,20 @@
         </div>
 
         <!-- Global Floating Controls -->
-        <div
-            class="container position-absolute bottom-0 start-50 translate-middle-x pb-5 px-4 d-flex justify-content-end z-3 pointer-events-none">
-            <div class="d-flex gap-2 pointer-events-auto">
-                <button
-                    class="btn btn-dark bg-opacity-50 border-0 rounded-circle p-3 d-flex align-items-center justify-content-center shadow"
-                    type="button" data-bs-target="#heroSlider" data-bs-slide="prev" aria-label="Previous Slide">
-                    <i class='bx bx-left-arrow-alt fs-5'></i>
-                </button>
-                <button
-                    class="btn btn-dark bg-opacity-50 border-0 rounded-circle p-3 d-flex align-items-center justify-content-center shadow"
-                    type="button" data-bs-target="#heroSlider" data-bs-slide="next" aria-label="Next Slide">
-                    <i class='bx bx-right-arrow-alt fs-5'></i>
-                </button>
-            </div>
-        </div>
+<div class="container position-absolute bottom-0  start-50 translate-middle-x pb-3 pb-md-5 px-4 d-flex justify-content-center justify-content-md-end z-3 pointer-events-none">
+    <div class="d-flex gap-2 pointer-events-auto">
+        <button
+            class="btn btn-dark bg-opacity-50 border-0 rounded-circle p-2 p-md-3 d-flex align-items-center justify-content-center shadow"
+            type="button" data-bs-target="#heroSlider" data-bs-slide="prev" aria-label="Previous Slide">
+            <i class='bx bx-left-arrow-alt fs-5'></i>
+        </button>
+        <button
+            class="btn btn-dark bg-opacity-50 border-0 rounded-circle p-2 p-md-3 d-flex align-items-center justify-content-center shadow"
+            type="button" data-bs-target="#heroSlider" data-bs-slide="next" aria-label="Next Slide">
+            <i class='bx bx-right-arrow-alt fs-5'></i>
+        </button>
+    </div>
+</div>
     </div>
 </section>
 
@@ -238,7 +234,8 @@
 
         <div class="col-12 col-md-6 col-lg-5">
             <div class="w-100">
-                <img src="img/Institute at UK.jfif" alt="Woman holding microphone at conference" class="img-fluid w-100 object-fit-cover" />
+                <img src="img/Institute at UK.jfif" alt="Woman holding microphone at conference"
+                    class="img-fluid w-100 object-fit-cover" />
             </div>
         </div>
 
