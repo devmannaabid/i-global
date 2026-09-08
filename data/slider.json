@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Approach",
+    "image": "img/approach.jfif",
+    "link": "layout.html?page=approach"
+  },
+  {
+    "id": 2,
+    "name": "Partnerships",
+    "image": "img/partnerships.jfif",
+    "link": "layout.html?page=partnerships"
+  },
+  {
+    "id": 3,
+    "name": "Future Of Britain",
+    "image": "img/FutureofBritain.jfif",
+    "link": "layout.html?page=futureofbritain"
+  },
+  {
+    "id": 4,
+    "name": "Insights",
+    "image": "img/insights.jfif",
+    "link": "layout.html?page=insights"
+  },
+  {
+    "id": 5,
+    "name": "Experts",
+    "image": "https://picsum.photos/id/1069/1200/650",
+    "link": "layout.html?page=experts"
+  },
+  {
+    "id": 6,
+    "name": "About Us",
+    "image": "img/aboutus.jfif",
+    "link": "layout.html?page=about-us"
+  },
+  {
+    "id": 7,
+    "name": "Executive Leadership",
+    "image": "img/leadership.jfif",
+    "link": "layout.html?page=executive-leadership"
+  },
+  {
+    "id": 8,
+    "name": "Careers",
+    "image": "img/careers.jfif",
+    "link": "layout.html?page=careers"
+  }
+]
