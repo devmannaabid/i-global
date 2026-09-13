@@ -1,34 +1,39 @@
 /* Desktop Styles */
+.vision-section {
+  position: relative;
+  z-index: 1;
+}
+
+.overlapping-image-wrapper {
+  position: relative;
+  z-index: 10;
+  margin-bottom: -25rem;
+}
+
+.overlapping-image-wrapper img {
+  height: 50rem;
+  width: 100%;
+  object-fit: cover;
+  display: block; /* নিচের এক্সট্রা স্পেস দূর করার জন্য */
+}
+
+/* প্যাডিং ২৪rem থেকে কমিয়ে ২৫rem বা প্রপোর্শনাল ভ্যালু ব্যবহার করুন */
+section:has(.overlapping-image-wrapper) + section {
+  padding-top: 25rem !important; /* Overlap মার্জিনের সাথে ম্যাচ করাতে */
+}
+
+/* Mobile Responsive Fix (Max-width: 767.98px) */
+@media (max-width: 767.98px) {
   .overlapping-image-wrapper {
-    position: relative;
-    z-index: 10;
-    margin-bottom: -25rem;
+    margin-bottom: -9rem !important;
   }
 
   .overlapping-image-wrapper img {
-    height: 50rem;
+    height: 18rem !important;
     object-fit: cover;
   }
 
   section:has(.overlapping-image-wrapper) + section {
-    padding-top: 24rem !important;
+    padding-top: 10rem !important;
   }
-
-  /* Mobile Responsive Fix (Max-width: 767.98px) */
-  @media (max-width: 767.98px) {
-    /* ১. ইমেজের হাইট বাড়িয়ে রেসপনসিভ করা */
-    .overlapping-image-wrapper img {
-      height: 18rem !important;
-      object-fit: cover;
-    }
-
-    /* ২. ইমেজের হাইটের ৫০% নিচে নামানো (18rem এর অর্ধেক = -9rem) */
-    .overlapping-image-wrapper {
-      margin-bottom: -9rem !important;
-    }
-
-    /* ৩. ডার্ক সেকশনের ওপরের অতিরিক্ত প্যাডিং কমিয়ে সঠিক ফাঁকা জায়গা রাখা */
-    section:has(.overlapping-image-wrapper) + section {
-      padding-top: 11rem !important; /* 9rem (ছবি) + 2rem (ফাঁকা স্পেস) */
-    }
-  }
+}
