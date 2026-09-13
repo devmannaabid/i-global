@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "subtitle": "A smarter health system",
+    "title": "Improving the quality and quantity of life",
+    "description": "We need to deliver a health system that not only treats people when they are sick, but also prevents illness in the first place. Using technology and data, we can give people greater control of their own health. We can improve diagnoses and disease prevention. And we can provide quality personalised care when and wherever people need it.",
+    "buttonText": "Explore Health"
+  },
+  {
+    "id": 2,
+    "subtitle": "A new era for education",
+    "title": "Personalised, world-class education for all",
+    "description": "Britain’s future depends on children having access to the best skills and education in the world. It should not depend on where they live. Through technology, we can deliver a world-class education system that is agile, affordable and accessible anywhere. By using AI-powered tech, we can break the link between location and quality to deliver choice, personalisation and data-driven improvement.",
+    "buttonText": "Explore Education"
+  },
+  {
+    "id": 3,
+    "subtitle": "Planning for the future",
+    "title": "Investing in the infrastructure we need",
+    "description": "The UK’s physical and digital infrastructure is suffering from systems designed for a bygone age. We need to speed up the pace of planning processes and expand our definition of essential infrastructure to fast-track the digital, energy, transport and service industries of the future.",
+    "buttonText": "Explore Planning & Infrastructure"
+  },
+  {
+    "id": 4,
+    "subtitle": "Powering next-generation industry",
+    "title": "Building the companies of the future",
+    "description": "Science and tech must be central to Britain’s national purpose if we are going to maintain a strategic edge in an era of historic technological change. We must embrace AI, use data and the cloud, accelerate biotech and medical science, and innovate to produce clean energy and solve the climate crisis.",
+    "buttonText": "Explore Innovation"
+  },
+  {
+    "id": 5,
+    "subtitle": "A decade of electrification",
+    "title": "Investing in the grid for future prosperity",
+    "description": "We need a radical overhaul of our approach to powering Britain. We need large-scale investment in innovation and physical infrastructure to deliver the shift to clean, secure and low-cost energy, allowing people to power their homes and businesses to power the growth our country needs.",
+    "buttonText": "Explore Getting to Net Zero"
+  },
+  {
+    "id": 6,
+    "subtitle": "Investing in our strategic edge",
+    "title": "Showing global leadership through technology",
+    "description": "The dynamics on the world stage are shifting. The United States and China are in a new contest for supremacy, with technology at the heart of that competition. A new plan for Britain requires the country to invest in science and technology to maintain a strategic edge in the 21st century.",
+    "buttonText": "Explore Britain's Place in the World"
+  }
+]
