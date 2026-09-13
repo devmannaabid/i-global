@@ -18,6 +18,7 @@
     </div>
 </div>
 
+
 <div class="container" x-data="insightsComponent">
     <div class="mt-5">
         <p class="text-uppercase">Featured</p>
@@ -60,6 +61,7 @@
     <div class="container-md">
         <div class="row row-cols-1 row-cols-md-3 g-4">
             <template x-for="item in insights.slice().reverse().slice(0, 6)" :key="item.id">
+                <a :href="`layout.html?page=view/insights-view&id=${item.id}`" class="text-decoration-none text-dark">
                 <div class="col">
                     <div class="card border-0 h-100">
                         <img :src="item.image || 'https://picsum.photos/seed/${item.id}/600/400'" class="card-img-top object-fit-cover md:h-[16rem]"
@@ -77,6 +79,7 @@
                         </div>
                     </div>
                 </div>
+                </a>
             </template>
         </div>
     </div>
@@ -254,6 +257,7 @@
     <div class="container-md">
         <div class="row row-cols-1 row-cols-md-3 g-4">
             <template x-for="item in visibleInsights" :key="item.id">
+                <a :href="`layout.html?page=view/insights-view&id=${item.id}`" class="text-decoration-none text-dark">
                 <div class="col">
                     <div class="card border-0 h-100">
                         <img :src="item.image || 'https://picsum.photos/seed/${item.id}/600/400'" class="card-img-top object-fit-cover md:h-[16rem]"
@@ -271,6 +275,7 @@
                         </div>
                     </div>
                 </div>
+                </a>
             </template>
         </div>
         <!-- See More Button Container -->

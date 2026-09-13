@@ -146,7 +146,8 @@
                     <p class="small text-uppercase text-white-50 fw-semibold mb-2 d-none d-md-block"
                         x-text="`${latestInsight.type} | ${latestInsight.date}`"></p>
                     <!-- Subtitle / Snippet -->
-                    <p class="card-text text-white-50 small mb-0 d-none d-md-block" x-text="latestInsight.description"></p>
+                    <p class="card-text text-white-50 small mb-0 d-none d-md-block" x-text="latestInsight.description">
+                    </p>
                 </div>
             </div>
         </div>
@@ -195,15 +196,16 @@
 
                         <div
                             class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-center p-4 z-2">
-                            <p class="text-uppercase text-white-50 mb-4 fw-semibold tracking-wider d-none d-md-block">Explore</p>
+                            <p class="text-uppercase text-white-50 mb-4 fw-semibold tracking-wider d-none d-md-block">
+                                Explore</p>
                             <h1 class="display-2 fw-bold text-white mb-5" x-text="slide.title"
                                 style="text-shadow: 0 3px 10px rgba(0,0,0,0.5);"></h1>
-                            <a :href="slide.buttonLink || '#'" 
-   @click.prevent="window.location.href = slide.buttonLink || '#'"
-   :style="{ backgroundColor: slide.color || '#6197a3' }"
-   class="btn btn-light text-white text-uppercase rounded-pill px-4 py-2 shadow-sm position-relative z-3">
-   See theme <i class="bx bx-right-arrow-alt"></i>
-</a>
+                            <a :href="slide.buttonLink || '#'"
+                                @click.prevent="window.location.href = slide.buttonLink || '#'"
+                                :style="{ backgroundColor: slide.color || '#6197a3' }"
+                                class="btn btn-light text-white text-uppercase rounded-pill px-4 py-2 shadow-sm position-relative z-3">
+                                See theme <i class="bx bx-right-arrow-alt"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -212,20 +214,21 @@
         </div>
 
         <!-- Global Floating Controls -->
-<div class="container position-absolute bottom-0  start-50 translate-middle-x pb-3 pb-md-5 px-4 d-flex justify-content-center justify-content-md-end z-3 pointer-events-none">
-    <div class="d-flex gap-2 pointer-events-auto">
-        <button
-            class="btn btn-dark bg-opacity-50 border-0 rounded-circle p-2 p-md-3 d-flex align-items-center justify-content-center shadow"
-            type="button" data-bs-target="#heroSlider" data-bs-slide="prev" aria-label="Previous Slide">
-            <i class='bx bx-left-arrow-alt fs-5'></i>
-        </button>
-        <button
-            class="btn btn-dark bg-opacity-50 border-0 rounded-circle p-2 p-md-3 d-flex align-items-center justify-content-center shadow"
-            type="button" data-bs-target="#heroSlider" data-bs-slide="next" aria-label="Next Slide">
-            <i class='bx bx-right-arrow-alt fs-5'></i>
-        </button>
-    </div>
-</div>
+        <div
+            class="container position-absolute bottom-0  start-50 translate-middle-x pb-3 pb-md-5 px-4 d-flex justify-content-center justify-content-md-end z-3 pointer-events-none">
+            <div class="d-flex gap-2 pointer-events-auto">
+                <button
+                    class="btn btn-dark bg-opacity-50 border-0 rounded-circle p-2 p-md-3 d-flex align-items-center justify-content-center shadow"
+                    type="button" data-bs-target="#heroSlider" data-bs-slide="prev" aria-label="Previous Slide">
+                    <i class='bx bx-left-arrow-alt fs-5'></i>
+                </button>
+                <button
+                    class="btn btn-dark bg-opacity-50 border-0 rounded-circle p-2 p-md-3 d-flex align-items-center justify-content-center shadow"
+                    type="button" data-bs-target="#heroSlider" data-bs-slide="next" aria-label="Next Slide">
+                    <i class='bx bx-right-arrow-alt fs-5'></i>
+                </button>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -234,7 +237,7 @@
 
         <div class="col-12 col-md-6 col-lg-5">
             <div class="w-100">
-                <img src="img/Institute at UK.jfif" alt="Woman holding microphone at conference"
+                <img src="img/institute-at-uk.jfif" alt="Woman holding microphone at conference"
                     class="img-fluid w-100 object-fit-cover" />
             </div>
         </div>

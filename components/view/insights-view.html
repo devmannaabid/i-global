@@ -1,0 +1,285 @@
+<div x-data="insightViewComponent">
+
+    <!-- Loading Indicator -->
+    <template x-if="isLoading">
+        <div class="d-flex justify-content-center align-items-center min-vh-100">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    </template>
+
+    <!-- Error Message -->
+    <template x-if="errorMessage">
+        <div class="container text-center my-5 py-5">
+            <div class="alert alert-danger" x-text="errorMessage"></div>
+        </div>
+    </template>
+
+    <!-- Content Area -->
+    <template x-if="!isLoading && item">
+        <div>
+            <!-- Hero Section -->
+            <section class="bg-tech text-white py-5 position-relative hero-section min-vh-100">
+                <div class="container pb-1">
+                    <!-- Category & Title -->
+                    <br>
+                    <div class="d-flex flex-column align-items-start text-start mb-4 mt-5">
+                        <p class="text-uppercase fw-bold mb-2 opacity-75 tracking-wider"
+                            x-text="typeof getCategoryName === 'function' ? getCategoryName(item.categoryId) : item.categoryId">
+                        </p>
+                        <h1 class="display-2 fw-semibold" x-text="item.title"></h1>
+                    </div>
+
+                    <!-- Horizontal Divider Line -->
+                    <hr class="border-white opacity-50 my-4">
+
+                    <!-- Row 1: Document Info & Authors -->
+                    <div
+                        class="d-flex justify-content-between align-items-center mb-4 fs-6 fw-semibold text-uppercase flex-wrap gap-2">
+                        <div>
+                            <span x-text="item.type"></span>
+                            <span class="mx-1 opacity-50">|</span>
+                            <span x-text="item.date"></span>
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                            <span
+                                class="badge rounded-circle bg-white text-dark p-2 d-inline-flex justify-content-center align-items-center"
+                                style="width: 32px; height: 32px;">BB</span>
+                            <a href="#" class="text-white text-decoration-underline text-transform-none">
+                                By Multiple Experts (9)
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Row 2: Action Icons & Social Sharing Buttons -->
+                    <div class="d-flex justify-content-between align-items-center pb-5 flex-wrap gap-3">
+                        <!-- Left Action Buttons -->
+                        <div class="d-flex gap-2">
+                            <button
+                                class="btn btn-outline-light rounded-circle p-0 d-inline-flex justify-content-center align-items-center"
+                                style="width: 44px; height: 44px;" title="Table of Contents" data-bs-toggle="modal"
+                                data-bs-target="#chaptersModal">
+                                <i class="bi bi-list-task fs-5"></i>
+                            </button>
+                            <button @click="downloadPDF()"
+                                class="btn btn-outline-light rounded-circle p-0 d-inline-flex justify-content-center align-items-center"
+                                style="width: 44px; height: 44px;" title="Download PDF">
+                                <i class="bi bi-download fs-5"></i>
+                            </button>
+                        </div>
+
+                        <!-- Right Social Share Buttons -->
+                        <div class="d-flex gap-2">
+                            <a :href="`mailto:?subject=${encodeURIComponent(item.title)}&body=${encodeURIComponent(window.location.href)}`"
+                                class="btn btn-outline-light rounded-circle p-0 d-inline-flex justify-content-center align-items-center"
+                                style="width: 44px; height: 44px;" title="Share via Email">
+                                <i class="bi bi-envelope fs-5"></i>
+                            </a>
+
+                            <a :href="`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`"
+                                target="_blank" rel="noopener noreferrer"
+                                class="btn btn-outline-light rounded-circle p-0 d-inline-flex justify-content-center align-items-center"
+                                style="width: 44px; height: 44px;" title="Share on LinkedIn">
+                                <i class="bi bi-linkedin fs-5"></i>
+                            </a>
+
+                            <a :href="`https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(item.title)}`"
+                                target="_blank" rel="noopener noreferrer"
+                                class="btn btn-outline-light rounded-circle p-0 d-inline-flex justify-content-center align-items-center"
+                                style="width: 44px; height: 44px;" title="Share on X">
+                                <i class="bi bi-twitter-x fs-5"></i>
+                            </a>
+
+                            <a :href="`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`"
+                                target="_blank" rel="noopener noreferrer"
+                                class="btn btn-outline-light rounded-circle p-0 d-inline-flex justify-content-center align-items-center"
+                                style="width: 44px; height: 44px;" title="Share on Facebook">
+                                <i class="bi bi-facebook fs-5"></i>
+                            </a>
+
+                            <a :href="`https://api.whatsapp.com/send?text=${encodeURIComponent(item.title + ' ' + window.location.href)}`"
+                                target="_blank" rel="noopener noreferrer"
+                                class="btn btn-outline-light rounded-circle p-0 d-inline-flex justify-content-center align-items-center"
+                                style="width: 44px; height: 44px;" title="Share on WhatsApp">
+                                <i class="bi bi-whatsapp fs-5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Wrapper -->
+                <!-- <div class="position-absolute w-100 container text-center hero-image-wrapper">
+                    <img :src="item.image || 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80'"
+                        class="img-fluid w-100 rounded-3 h-[50rem] shadow-lg object-fit-cover" :alt="item.title">
+                </div> -->
+                <div class="overlapping-image-wrapper container">
+                    <img :src="item.image || 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80'"
+                        class="img-fluid w-100  shadow-lg  object-fit-cover" alt="Hero Banner Image">
+                </div>
+            </section>
+
+            <!-- Space reservation element below hero -->
+            <div class="h-[25rem] hero-bottom-space"></div>
+            <hr class="container opacity-25">
+
+            <!-- Executive Summary Section -->
+            <section class="summary-section">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-md-10 col-lg-8">
+                            <h2 class="summary-title font-serif text-start mb-5">
+                                Executive Summary
+                            </h2>
+                            <div class="summary-body">
+                                <p x-text="item.description"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <hr class="container opacity-25 my-5">
+
+            <!-- Chapters Section (Dynamically rendered from insights-book.json) -->
+            <template x-if="chapters && chapters.length > 0">
+                <div>
+                    <template x-for="ch in chapters" :key="ch.id">
+                        <section class="chapter-section pb-5">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12 col-md-3 col-lg-2 mb-3 mb-md-0">
+                                        <span class="text-uppercase fw-semibold text-muted small"
+                                            x-text="`Chapter ${ch.chapters}`"></span>
+                                    </div>
+                                    <div class="col-12 col-md-9 col-lg-8">
+                                        <h2 class="fw-semibold text-dark mb-4" x-text="ch.title"></h2>
+                                        <div class="lh-lg text-secondary">
+                                            <p class="mb-4" x-text="ch.details"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </template>
+                </div>
+            </template>
+
+            <!-- Related Articles (Dynamically Rendered) -->
+            <section class="py-2">
+                <div class="container">
+                    <div>
+                        <h1>Related Articles</h1>
+                    </div>
+                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                        <template x-for="rel in relatedArticles" :key="rel.id">
+                            <div class="col">
+                                <div class="card border-0">
+                                    <a :href="`layout.html?page=view/insights-view&id=${rel.id}`"
+                                        class="text-decoration-none text-dark">
+                                        <img :src="rel.image" class="card-img-top object-fit-cover"
+                                            style="height: 220px;" :alt="rel.title">
+                                    </a>
+                                    <div class="card-body p-0 mt-3">
+                                        <p class="text-uppercase mb-1">
+                                            <box-icon type='solid' name='circle' size="14px"></box-icon>
+                                            <span
+                                                x-text="typeof getCategoryName === 'function' ? getCategoryName(rel.categoryId) : rel.categoryId"></span>
+                                        </p>
+                                        <a :href="`layout.html?page=view/insights-view&id=${rel.id}`"
+                                            class="text-decoration-none text-dark">
+                                            <h2 class="card-title h5" x-text="rel.title"></h2>
+                                        </a>
+                                        <small class="card-text text-muted"
+                                            x-text="`${rel.type} | ${rel.date}`"></small>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Article Tags -->
+            <section class="px-5 mt-5">
+                <div>
+                    <h4>Article Tags</h4>
+                </div>
+                <hr>
+                <div class="d-flex flex-wrap gap-2 mt-4">
+                    <a href="#" class="btn btn-outline-dark px-4 py-2">Artificial Intelligence</a>
+                    <a href="#" class="btn btn-outline-dark px-4 py-2">Tech</a>
+                    <a href="#" class="btn btn-outline-dark px-4 py-2">Digital Transformation</a>
+                    <a href="#" class="btn btn-outline-dark px-4 py-2">Cybersecurity</a>
+                    <a href="#" class="btn btn-outline-dark px-4 py-2">Government Delivery</a>
+                    <a href="#" class="btn btn-outline-dark px-4 py-2">Investment</a>
+                </div>
+            </section>
+
+            <!-- Newsletter Section -->
+            <section class="py-5 overflow-hidden position-relative text-bg-dark mt-5">
+                <div class="container text-center mt-5 pt-4 mb-5">
+                    <span class="text-uppercase fw-semibold text-secondary"
+                        style="font-size:.75rem;letter-spacing:3px;">
+                        NEWSLETTER
+                    </span>
+                </div>
+
+                <!-- Ticker Rows -->
+                <div class="ticker-wrapper mb-4">
+                    <div class="ticker-track gap-4" id="row1Track">
+                        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=300&auto=format&fit=crop"
+                            class="ticker-img">
+                        <span class="ticker-text">Practical Solutions</span>
+                        <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=300&auto=format&fit=crop"
+                            class="ticker-img">
+                        <span class="ticker-text">Radical Ideas</span>
+                    </div>
+                </div>
+
+                <div class="container text-center">
+                    <a href="#"
+                        class="btn border-0 bg-transparent text-white fw-semibold d-inline-flex align-items-center gap-2">
+                        <span style="letter-spacing:2px;font-size:.8rem;">SIGN UP</span>
+                        <span class="bg-dark text-white rounded-circle d-flex justify-content-center align-items-center"
+                            style="width:28px;height:28px;">
+                            <i class="bi bi-arrow-right"></i>
+                        </span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Chapters Modal -->
+            <div class="modal fade" id="chaptersModal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-fullscreen">
+                    <div class="modal-content bg-black text-white p-4 p-md-5">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <span class="text-uppercase fw-semibold tracking-wider small">CHAPTERS</span>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="container">
+                            <div class="border-top border-bottom border-white-50">
+                                <div class="py-3 border-bottom border-white-50">
+                                    <a href="#" class="text-white text-decoration-none fs-2 font-monospace">Executive
+                                        Summary</a>
+                                </div>
+
+                                <!-- Dynamic Chapters List in Modal -->
+                                <template x-for="ch in chapters" :key="ch.id">
+                                    <div class="py-3 border-bottom border-white-50 d-flex align-items-center">
+                                        <span class="text-white-50 me-4 font-monospace fs-6"
+                                            x-text="String(ch.chapters).padStart(2, '0')"></span>
+                                        <a href="#" class="text-white text-decoration-none fs-2 font-monospace"
+                                            x-text="ch.title" data-bs-dismiss="modal"></a>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </template>
+</div>

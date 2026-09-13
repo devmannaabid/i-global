@@ -6,7 +6,7 @@
             <small class="text-uppercase text-secondary fw-semibold">Initiatives</small>
             <h1 class="display-1 fw-bold mt-3 mb-5">
                 Future of
-                <span class="d-inline-block border border-2 border-dark rounded-pill px-4 py-2">
+                <span class="d-inline-block bg-powderblue border border-2 border-dark rounded-pill px-4 py-2">
                     Britain
                 </span>
             </h1>
@@ -18,8 +18,8 @@
 
         <!-- শুধুমাত্র এই ডাইভটিতেই ওভারল্যাপ ক্লাস থাকবে -->
         <div class="overlapping-image-wrapper">
-            <img src="img/futureofbritain.jfif"
-                class="img-fluid w-100  shadow-lg  object-fit-cover" alt="Hero Banner Image">
+            <img src="img/futureofbritain.jfif" class="img-fluid w-100  shadow-lg  object-fit-cover"
+                alt="Hero Banner Image">
         </div>
 </section>
 
@@ -110,117 +110,30 @@
         <div class="mb-5">
             <h2 class="display-1 fw-bold">Explore the topics</h2>
         </div>
-        <div class="row row-cols-1 row-cols-md-2 g-4 mt-5 mb-5">
-            <!-- Card 1: Health -->
-            <div class="col">
-                <hr>
-                <div class="card h-100 bg-transparent border-0">
-                    <div class="card-body">
-                        <h3 class="card-title mb-5">A smarter health system</h3>
-                        <h2 class="card-title">Improving the quality and quantity of life</h2>
-                        <p class="card-text mb-4 fw-bold">We need to deliver a health system that not only treats people
-                            when they are sick, but also prevents illness in the first place. Using technology and data,
-                            we can give people greater control of their own health. We can improve diagnoses and disease
-                            prevention. And we can provide quality personalised care when and wherever people need it.
-                        </p>
-                        <button class="btn btn-outline-dark text-uppercase fw-semibold rounded-pill px-4 py-2">Explore
-                            Health &rarr;</button>
+        <div x-data="exploreTopicsComponent">
+            <div x-show="!isLoading" class="row row-cols-1 row-cols-md-2 g-4 mt-5 mb-5">
+                <template x-for="topic in topics" :key="topic.id">
+                    <div class="col">
+                        <hr>
+                        <div class="card h-100 bg-transparent border-0">
+                            <div class="card-body">
+                                <h3 class="card-title mb-5" x-text="topic.subtitle"></h3>
+                                <h2 class="card-title" x-text="topic.title"></h2>
+                                <p class="card-text mb-4 fw-bold" x-text="topic.description"></p>
+                                <button @click="goToCategory(topic.categoryId)"
+                                    class="btn btn-outline-dark text-uppercase fw-semibold rounded-pill px-4 py-2">
+                                    <span x-text="topic.buttonText"></span> &rarr;
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-
-            <!-- Card 2: Education -->
-            <div class="col">
-                <hr>
-                <div class="card h-100 bg-transparent border-0">
-                    <div class="card-body">
-                        <h3 class="card-title mb-5">A new era for education</h3>
-                        <h2 class="card-title">Personalised, world-class education for all</h2>
-                        <p class="card-text mb-4 fw-bold">Britain’s future depends on children having access to the best
-                            skills and education in the world. It should not depend on where they live. Through
-                            technology, we can deliver a world-class education system that is agile, affordable and
-                            accessible anywhere. By using AI-powered tech, we can break the link between location and
-                            quality to deliver choice, personalisation and data-driven improvement.</p>
-                        <button class="btn btn-outline-dark text-uppercase fw-semibold rounded-pill px-4 py-2">Explore
-                            Education &rarr;</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 3: Planning & Infrastructure -->
-            <div class="col">
-                <hr>
-                <div class="card h-100 bg-transparent border-0">
-                    <div class="card-body">
-                        <h3 class="card-title mb-5">Planning for the future</h3>
-                        <h2 class="card-title">Investing in the infrastructure we need</h2>
-                        <p class="card-text mb-4 fw-bold">The UK’s physical and digital infrastructure is suffering from
-                            systems designed for a bygone age. We need to speed up the pace of planning processes and
-                            expand our definition of essential infrastructure to fast-track the digital, energy,
-                            transport and service industries of the future.</p>
-                        <button class="btn btn-outline-dark text-uppercase fw-semibold rounded-pill px-4 py-2">Explore
-                            Planning &amp; Infrastructure &rarr;</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 4: Innovation -->
-            <div class="col">
-                <hr>
-                <div class="card h-100 bg-transparent border-0">
-                    <div class="card-body">
-                        <h3 class="card-title mb-5">Powering next-generation industry</h3>
-                        <h2 class="card-title">Building the companies of the future</h2>
-                        <p class="card-text mb-4 fw-bold">Science and tech must be central to Britain’s national purpose
-                            if we are going to maintain a strategic edge in an era of historic technological change. We
-                            must embrace AI, use data and the cloud, accelerate biotech and medical science, and
-                            innovate to produce clean energy and solve the climate crisis.</p>
-                        <button class="btn btn-outline-dark text-uppercase fw-semibold rounded-pill px-4 py-2">Explore
-                            Innovation &rarr;</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 5: Net Zero -->
-            <div class="col">
-                <hr>
-                <div class="card h-100 bg-transparent border-0">
-                    <div class="card-body">
-                        <h3 class="card-title mb-5">A decade of electrification</h3>
-                        <h2 class="card-title">Investing in the grid for future prosperity</h2>
-                        <p class="card-text mb-4 fw-bold">We need a radical overhaul of our approach to powering
-                            Britain. We need large-scale investment in innovation and physical infrastructure to deliver
-                            the shift to clean, secure and low-cost energy, allowing people to power their homes and
-                            businesses to power the growth our country needs.</p>
-                        <button class="btn btn-outline-dark text-uppercase fw-semibold rounded-pill px-4 py-2">Explore
-                            Getting to Net Zero &rarr;</button>
-                    </div>
-                </div>
-                <hr class="d-none d-sm-block">
-            </div>
-
-            <!-- Card 6: Global Leadership -->
-            <div class="col">
-                <hr>
-                <div class="card h-100 bg-transparent border-0">
-                    <div class="card-body">
-                        <h3 class="card-title mb-5">Investing in our strategic edge</h3>
-                        <h2 class="card-title">Showing global leadership through technology</h2>
-                        <p class="card-text mb-4 fw-bold">The dynamics on the world stage are shifting. The United
-                            States and China are in a new contest for supremacy, with technology at the heart of that
-                            competition. A new plan for Britain requires the country to invest in science and technology
-                            to maintain a strategic edge in the 21st century.</p>
-                        <button class="btn btn-outline-dark text-uppercase fw-semibold rounded-pill px-4 py-2">Explore
-                            Britain's Place in the World &rarr;</button>
-                    </div>
-                </div>
-                <hr>
+                </template>
             </div>
         </div>
         <!-- শুধুমাত্র এই ডাইভটিতেই ওভারল্যাপ ক্লাস থাকবে -->
         <div class="overlapping-image-wrapper ">
-            <img src="img/futureofbritain-cover.jfif"
-                class="img-fluid w-100  shadow-lg  object-fit-cover" alt="Hero Banner Image">
+            <img src="img/futureofbritain-cover.jfif" class="img-fluid w-100  shadow-lg  object-fit-cover"
+                alt="Hero Banner Image">
         </div>
     </div>
 </section>
